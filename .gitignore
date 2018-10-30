@@ -2,3 +2,4 @@
 /my_dev_vagrant/.vagrant
 /my_dev_vagrant/backups
 
+/my_dev_vagrant/scripts/base/java/install-file
