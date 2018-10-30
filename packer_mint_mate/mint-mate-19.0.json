@@ -1,0 +1,16 @@
+{
+  "_comment": "Build with `packer build -var-file=mint-mate-19.0.json core_template.json`",
+  "boot_command_prefix": "<esc><wait><tab><wait><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+  "box_tag": "ajxb/mint-19.0",
+  "cpus": "4",
+  "disk_size": "150000",
+  "iso_checksum_type": "sha256",
+  "iso_checksum": "f8164654b7600ced1aa8ef6abee2e56620388b0baa161d7b17699f425223d7c7",
+  "iso_url": "http://www.mirrorservice.org/sites/www.linuxmint.com/pub/linuxmint.com/stable/19/linuxmint-19-mate-64bit-v2.iso",
+  "memory": "4096",
+  "preseed": "mint-19.seed",
+  "vagrantfile_template": "tpl/vagrantfile-mint-mate-19.tpl",
+  "version": "1.0.2",
+  "version_description": "Linux Mint 19.0 with VirtualBox Guest Additions 5.2.12",
+  "vm_name": "mint-mate-19.0"
+}

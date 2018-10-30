@@ -1,0 +1,44 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "mint-mate-19.0"
+  
+  config.disksize.size = '150GB'
+  config.vbguest.auto_update = true
+  
+  config.vm.synced_folder "./scripts", "/my_dev_settings"
+  
+  config.vm.provider :virtualbox do |v, override|
+    v.gui = true
+    v.customize ["modifyvm", :id, "--memory", 4096]
+    v.customize ["modifyvm", :id, "--cpus", 4]
+    v.customize ["modifyvm", :id, "--vram", "256"]
+    v.customize ["setextradata", "global", "GUI/MaxGuestResolution", "any"]
+    v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
+    v.customize ["modifyvm", :id, "--rtcuseutc", "on"]
+    v.customize ["modifyvm", :id, "--accelerate3d", "on"]
+v.customize ["modifyvm", :id, "--accelerate2dvideo", "on"]
+v.customize ["modifyvm", :id, "--hwvirtex", "on"]
+v.customize ["modifyvm", :id, "--nestedpaging", "on"]
+v.customize ["modifyvm", :id, "--largepages", "on"]
+v.customize ["modifyvm", :id, "--ioapic", "on"]
+v.customize ["modifyvm", :id, "--pae", "on"]
+    v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+  end
+  
+  config.vm.provision "base", type:"shell", run: "never", inline: <<-SHELL
+    rm -rf /opt/my_dev_settings
+    cp -rf /my_dev_settings /opt/ && chmod 777 /opt/my_dev_settings/ -R
+    cd /opt/my_dev_settings
+    ./base_setup.sh base
+  SHELL
+  
+  config.vm.provision "my_dev", type:"shell", run: "never", inline: <<-SHELL
+    rm -rf /opt/my_dev_settings
+    cp -rf /my_dev_settings /opt/ && chmod 777 /opt/my_dev_settings/ -R
+    cd /opt/my_dev_settings
+    ./my_dev_setup.sh
+  SHELL
+
+end
