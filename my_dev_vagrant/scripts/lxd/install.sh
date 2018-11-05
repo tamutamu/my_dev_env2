@@ -14,7 +14,7 @@ sudo apt -y autoclean
 
 
 # Install lxd.
-sudo apt -y install zfsutils-linux jq dnsmasq-utils firewalld
+sudo apt -y install snapd zfsutils-linux jq dnsmasq-utils
 sudo snap install lxd --channel=3.0
 sudo lxd waitready
 
@@ -24,11 +24,15 @@ sudo mkdir -p ${LXD_HOME}
 
 sudo cp -r ${CURDIR}/bin ${LXD_HOME}/
 sudo cp -r ${CURDIR}/include ${LXD_HOME}/
+sudo cp -r ${CURDIR}/lib ${LXD_HOME}/
+sudo cp -r ${CURDIR}/container ${LXD_HOME}/
+sudo cp -r ${CURDIR}/.lxd_profile ${LXD_HOME}/
+
+sudo chown lxd:lxd ${LXD_HOME} -R
+sudo chmod g+rwx ${LXD_HOME} -R
+
 sudo cp -r ${CURDIR}/conf ${LXD_SNAP_COMMON}/
 
-sudo cp -r ${CURDIR}/container /var/lxd/
-sudo chown lxd:lxd /var/lxd/ -R
-sudo chmod g+rwx /var/lxd/ -R
 
 
 # Init lxd.

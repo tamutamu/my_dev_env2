@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
 
-. ./conf/var.conf
+. var.conf
 
 . ${LXD_HOME}/include/ssh-util.sh
 

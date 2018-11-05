@@ -1,3 +1,0 @@
-# Installation requirements (see also constraints.txt).
-
-rotate-backups == 6.0

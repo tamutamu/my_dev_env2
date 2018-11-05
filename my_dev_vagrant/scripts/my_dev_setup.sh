@@ -20,6 +20,7 @@ function do_bashl(){
 }
 
 
+do_bashl ${CURDIR}/lang_jp/install.sh
 do_bashl ${CURDIR}/git/config.sh
 do_bashl ${CURDIR}/terminator/install.sh
 do_bashl ${CURDIR}/meld/install.sh

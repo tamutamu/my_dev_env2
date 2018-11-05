@@ -1,0 +1,16 @@
+[Unit]
+Description=Backup when os shutdown.
+Before=shutdown.target
+DefaultDependencies=no
+ConditionFileIsExecutable=/opt/scripts/py-backup/personal_backup.sh
+
+[Service]
+Type=oneshot
+User=tamutamu
+ExecStart=/opt/scripts/py-backup/personal_backup.sh
+RemainAfterExit=yes
+Environment=PATH=/home/tamutamu/.rbenv/shims:/home/tamutamu/.rbenv/bin:/home/tamutamu/.pyenv/plugins/pyenv-virtualenv/shims:/home/tamutamu/.pyenv/shims:/home/tamutamu/.pyenv/bin:/home/tamutamu/.local/bin:/home/tamutamu/.rbenv/shims:/home/tamutamu/.rbenv/bin:/home/tamutamu/.pyenv/plugins/pyenv-virtualenv/shims:/home/tamutamu/.pyenv/shims:/home/tamutamu/.pyenv/bin:/home/tamutamu/.local/bin:/usr/java/java_home/bin:/home/tamutamu/.rbenv/shims:/home/tamutamu/.rbenv/bin:/home/tamutamu/.pyenv/plugins/pyenv-virtualenv/shims:/home/tamutamu/.pyenv/shims:/home/tamutamu/.pyenv/bin:/home/tamutamu/.local/bin:/usr/java/java_home/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/tamutamu/.fzf/bin:/var/lxd/bin:/snap/bin:/var/lib/snapd/snap/bin
+
+
+[Install]
+WantedBy=shutdown.target

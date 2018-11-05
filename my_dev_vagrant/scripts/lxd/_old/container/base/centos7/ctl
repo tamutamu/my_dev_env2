@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. ${LXD_HOME}/include/global.conf
+
+
+IMG_NAME="images:centos/7/amd64"
+
+CURDIR=$(cd $(dirname $0); pwd)
+pushd ${CURDIR} > /dev/null
+
+command=$1
+shift
+
+### my command
+case "${command}" in
+  #cmd)
+  #    do command...
+  #    exit 0
+  #    ;;
+esac
+
+
+### common command
+. ${LXD_HOME}/include/common-launcher.sh
+
+popd > /dev/null

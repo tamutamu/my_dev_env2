@@ -1,0 +1,10 @@
+#!/bin/bash -eu
+
+
+. /etc/profile.d/lxd.sh
+. ${LXD_HOME}/.lxd_profile
+
+
+pushd ${LXD_HOME}/lib > /dev/null
+python ct_main.py
+popd > /dev/null
