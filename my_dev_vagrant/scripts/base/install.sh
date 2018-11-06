@@ -94,6 +94,11 @@ popd
 
 
 
+### Update journal save path, default temporary path '/var/run/log/journal'.  System restart so clear.
+mkdir -p /var/log/journal
+
+
+
 ### etc..
 
 # All install and config.
