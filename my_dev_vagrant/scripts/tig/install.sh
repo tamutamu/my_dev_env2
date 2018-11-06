@@ -15,3 +15,5 @@ cd tig
 ./configure --enable-widec
 LDLIBS=-lncursesw CFLAGS=-I/usr/include/ncursesw sudo make install
 popd
+
+ln -s ${CURDIR}/../.dotfiles/.tigrc ~/

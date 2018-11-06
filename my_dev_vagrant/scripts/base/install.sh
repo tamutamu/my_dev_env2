@@ -36,6 +36,11 @@ apt -y install language-pack-ja
 update-locale LANG=ja_JP.UTF-8
 
 
+### Iptables save and restore
+echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
+echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
+apt -y install iptables-persistent
+
 
 ### Install base develop tools.
 apt -y install build-essential automake git
