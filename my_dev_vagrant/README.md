@@ -4,6 +4,8 @@ My Develop Environment
 
 ## Get Start
 
+  - 自動ログインユーザの変更
+  - 管理者ユーザの変更
   - .\base_provision.bat
   - .\my_dev_provision.bat
   - vagrant up
