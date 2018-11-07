@@ -8,6 +8,8 @@ sudo apt -y install fcitx-config-gtk
 sudo apt -y install $(check-language-support -l ja)
 sudo im-config -n fcitx
 
+sudo apt install -y fonts-roboto fonts-noto fonts-ricty-diminished
+
 
 #pkill fcitx
 #sed -i "s/mozc:False/mozc:True/" .config/fcitx/profile #mozcÇí«â¡Ç…Ç∑ÇÈÅB
