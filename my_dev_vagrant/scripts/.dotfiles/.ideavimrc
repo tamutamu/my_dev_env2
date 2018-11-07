@@ -1,0 +1,29 @@
+" Config
+set clipboard=unnamed
+
+" Surround.vim
+set surround
+
+" Search
+set smartcase
+set incsearch
+set ignorecase
+set wrapscan
+set hlsearch
+
+
+" Keyremap
+nnoremap <Space>w :<C-u>w<cr>
+nnoremap <Space>q :<C-u>q<cr>
+"" nmap / :action Find<CR>
+"" nmap n :action FindNext<CR>
+nnoremap <Space>g :<C-u>action GotoAction<CR>
+
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+nnoremap <Tab><Tab> gt
+nnoremap <S-Tab> gT
+for i in range(1, 9)
+  execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+endfor
+
