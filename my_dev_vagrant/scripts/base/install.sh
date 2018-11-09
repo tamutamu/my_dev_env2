@@ -99,6 +99,13 @@ mkdir -p /var/log/journal
 
 
 
+### Disable systemd-resolve
+systemctl disable systemd-resolved
+sed -i:.bk -e "3i dns=default" /etc/NetworkManager/NetworkManager.conf
+systemctl restart NetworkManager
+
+
+
 ### etc..
 
 # All install and config.
