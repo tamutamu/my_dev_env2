@@ -10,14 +10,16 @@ CURDIR=$(cd $(dirname $0); pwd)
 pushd /tmp
 
 ### Create User "tomcat".
+set +e
 sudo groupadd tomcat
 sudo useradd -M -s /bin/nologin -g tomcat -d "${TOMCAT_HOME}" tomcat
-sudo mkdir "${TOMCAT_HOME}"
+sudo mkdir -p "${TOMCAT_HOME}"
 sudo chown tomcat:tomcat "${TOMCAT_HOME}"
 sudo chmod g+s "${TOMCAT_HOME}"
+set -e
 
 ### Install Tomcat8
-sudo wget http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v"${TOMCAT_VER}"/bin/apache-tomcat-"${TOMCAT_VER}".tar.gz
+sudo wget https://archive.apache.org/dist/tomcat/tomcat-8/v"${TOMCAT_VER}"/bin/apache-tomcat-"${TOMCAT_VER}".tar.gz
 sudo tar xf apache-tomcat-"${TOMCAT_VER}".tar.gz -C "${TOMCAT_HOME}" --strip-components=1
 sudo chown -R tomcat:tomcat "${TOMCAT_HOME}"
 
