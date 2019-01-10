@@ -29,7 +29,14 @@ v.customize ["modifyvm", :id, "--pae", "on"]
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
   end
   
-  config.vm.provision "base", type:"shell", run: "never", inline: <<-SHELL
+  config.vm.provision "kernel", type:"shell", run: "never", inline: <<-SHELL
+    rm -rf /opt/my_dev_settings
+    cp -rf /my_dev_settings /opt/ && chmod 777 /opt/my_dev_settings/ -R
+    cd /opt/my_dev_settings
+    ./base_setup.sh kernel
+  SHELL
+  
+  config.vm.provision "my_dev_base", type:"shell", run: "never", inline: <<-SHELL
     rm -rf /opt/my_dev_settings
     cp -rf /my_dev_settings /opt/ && chmod 777 /opt/my_dev_settings/ -R
     cd /opt/my_dev_settings
