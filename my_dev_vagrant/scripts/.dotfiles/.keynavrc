@@ -1,5 +1,5 @@
 clear
-ctrl+semicolon start
+ctrl+semicolon start, cursorzoom 300 300
 Escape end
 ctrl+bracketleft end
 q record ~/.keynav_macros
@@ -16,8 +16,7 @@ shift+l move-right
 space warp,click 1,end
 Return warp,click 1,end
 semicolon warp,end
-w warp
-t windowzoom
+w warp,click 1
 c cursorzoom 300 300
 e end
 1 click 1
