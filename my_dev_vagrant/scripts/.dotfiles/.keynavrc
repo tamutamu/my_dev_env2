@@ -17,7 +17,7 @@ space warp,click 1,end
 Return warp,click 1,end
 semicolon warp,end
 w warp,click 1
-c cursorzoom 300 300
+c warp,cursorzoom 30 30
 e end
 1 click 1
 2 click 2

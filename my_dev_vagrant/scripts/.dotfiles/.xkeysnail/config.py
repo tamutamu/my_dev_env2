@@ -23,5 +23,5 @@ define_keymap(None, {
 
 
 define_keymap(re.compile('Terminator'), {
-    K('esc'): [K('GRAVE'), K('esc')]
+      K('esc'): [K('C-esc'), K('esc')],
 }, "Esc and IME off")
